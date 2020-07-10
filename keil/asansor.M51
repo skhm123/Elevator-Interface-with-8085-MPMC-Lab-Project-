@@ -1,0 +1,230 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    07/10/2020  18:02:16  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE asansor.obj TO asansor RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  asansor.obj (ASANSOR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  asansor (ASANSOR)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0008H     UNIT         _DATA_GROUP_
+            DATA    0010H     0006H     UNIT         ?DT?ASANSOR
+            IDATA   0016H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008CH     UNIT         ?C_C51STARTUP
+            CODE    088CH     0064H     UNIT         ?PR?MAIN?ASANSOR
+            CODE    08F0H     0061H     UNIT         ?PR?_ASAGI?ASANSOR
+            CODE    0951H     0054H     UNIT         ?PR?_YUKARI?ASANSOR
+            CODE    09A5H     004CH     UNIT         ?PR?_KONTROL?ASANSOR
+            CODE    09F1H     0037H     UNIT         ?PR?_BEKLE?ASANSOR
+            CODE    0A28H     0009H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   asansor (ASANSOR)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?ASANSOR
+  +--> ?C_INITSEG
+
+?PR?MAIN?ASANSOR               0008H    0002H
+  +--> ?PR?_KONTROL?ASANSOR
+
+?PR?_KONTROL?ASANSOR           000AH    0004H
+  +--> ?PR?_YUKARI?ASANSOR
+  +--> ?PR?_ASAGI?ASANSOR
+
+?PR?_YUKARI?ASANSOR            000EH    0002H
+  +--> ?PR?_BEKLE?ASANSOR
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/10/2020  18:02:16  PAGE 2
+
+
+?PR?_ASAGI?ASANSOR             000EH    0002H
+  +--> ?PR?_BEKLE?ASANSOR
+
+
+
+SYMBOL TABLE OF MODULE:  asansor (ASANSOR)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ASANSOR
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:09FDH         PUBLIC        _bekle
+  C:08F0H         PUBLIC        _asagi
+  C:09A5H         PUBLIC        _kontrol
+  C:0951H         PUBLIC        _yukari
+  C:088CH         PUBLIC        main
+  D:0010H         PUBLIC        kat
+  D:0012H         PUBLIC        hiz
+  D:0014H         PUBLIC        tur
+  -------         PROC          L?0038
+  -------         ENDPROC       L?0038
+  -------         PROC          _BEKLE
+  D:0006H         SYMBOL        c
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:09FDH         LINE#         9
+  C:09FDH         LINE#         10
+  C:09FDH         LINE#         12
+  C:0A01H         LINE#         13
+  C:0A01H         LINE#         14
+  C:0A03H         LINE#         15
+  C:0A03H         LINE#         16
+  C:0A15H         LINE#         17
+  C:0A15H         LINE#         19
+  C:0A1CH         LINE#         20
+  C:0A27H         LINE#         21
+  C:0A27H         LINE#         23
+  -------         ENDPROC       _BEKLE
+  -------         PROC          _YUKARI
+  D:000EH         SYMBOL        b
+  -------         DO            
+  D:0002H         SYMBOL        i
+  D:0082H         SYMBOL        j
+  -------         ENDDO         
+  C:0951H         LINE#         25
+  C:0955H         LINE#         26
+  C:0955H         LINE#         28
+  C:0968H         LINE#         29
+  C:0968H         LINE#         31
+  C:096BH         LINE#         32
+  C:096BH         LINE#         33
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/10/2020  18:02:16  PAGE 3
+
+
+  C:096EH         LINE#         34
+  C:096EH         LINE#         35
+  C:096EH         LINE#         36
+  C:0971H         LINE#         37
+  C:0974H         LINE#         38
+  C:097AH         LINE#         39
+  C:097DH         LINE#         40
+  C:0983H         LINE#         41
+  C:098CH         LINE#         42
+  C:0991H         LINE#         43
+  C:0998H         LINE#         44
+  C:09A4H         LINE#         46
+  -------         ENDPROC       _YUKARI
+  -------         PROC          _ASAGI
+  D:000EH         SYMBOL        b
+  -------         DO            
+  D:0002H         SYMBOL        i
+  D:0082H         SYMBOL        j
+  -------         ENDDO         
+  C:08F0H         LINE#         47
+  C:08F4H         LINE#         48
+  C:08F4H         LINE#         50
+  C:0907H         LINE#         51
+  C:0907H         LINE#         52
+  C:091BH         LINE#         53
+  C:091BH         LINE#         54
+  C:091EH         LINE#         55
+  C:0924H         LINE#         56
+  C:0927H         LINE#         57
+  C:0927H         LINE#         58
+  C:0927H         LINE#         59
+  C:092AH         LINE#         60
+  C:092DH         LINE#         61
+  C:0933H         LINE#         62
+  C:0936H         LINE#         63
+  C:093CH         LINE#         64
+  C:0943H         LINE#         65
+  C:0950H         LINE#         67
+  -------         ENDPROC       _ASAGI
+  -------         PROC          _KONTROL
+  D:000AH         SYMBOL        a
+  -------         DO            
+  D:000CH         SYMBOL        fark
+  -------         ENDDO         
+  C:09A5H         LINE#         71
+  C:09A9H         LINE#         72
+  C:09A9H         LINE#         74
+  C:09BAH         LINE#         75
+  C:09BAH         LINE#         76
+  C:09C6H         LINE#         77
+  C:09CCH         LINE#         78
+  C:09CCH         LINE#         80
+  C:09DDH         LINE#         81
+  C:09DDH         LINE#         82
+  C:09EAH         LINE#         83
+  C:09F0H         LINE#         84
+  C:09F0H         LINE#         86
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/10/2020  18:02:16  PAGE 4
+
+
+  -------         ENDPROC       _KONTROL
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        kat1
+  -------         ENDDO         
+  C:088CH         LINE#         89
+  C:088CH         LINE#         90
+  C:088CH         LINE#         92
+  C:0891H         LINE#         93
+  C:0894H         LINE#         94
+  C:0894H         LINE#         95
+  C:0894H         LINE#         96
+  C:089BH         LINE#         97
+  C:089BH         LINE#         98
+  C:08A0H         LINE#         99
+  C:08A6H         LINE#         100
+  C:08A6H         LINE#         102
+  C:08ADH         LINE#         103
+  C:08ADH         LINE#         104
+  C:08B2H         LINE#         105
+  C:08B8H         LINE#         106
+  C:08B8H         LINE#         108
+  C:08BFH         LINE#         109
+  C:08BFH         LINE#         110
+  C:08C4H         LINE#         111
+  C:08CAH         LINE#         112
+  C:08CAH         LINE#         114
+  C:08D1H         LINE#         115
+  C:08D1H         LINE#         116
+  C:08D6H         LINE#         117
+  C:08DCH         LINE#         118
+  C:08DCH         LINE#         120
+  C:08E3H         LINE#         121
+  C:08E3H         LINE#         122
+  C:08E8H         LINE#         123
+  C:08EEH         LINE#         124
+  C:08EEH         LINE#         125
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        ASANSOR
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 01A4H BYTE (20%) *
+******************************************************************************
+
+Program Size: data=23.0 xdata=0 code=564
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
